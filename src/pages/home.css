@@ -1,7 +1,8 @@
 .home{
+    position: absolute;
     width: 100%;
     height: calc(100vh - 80px);
-    background: url("/src/assets/ordi.jpg");
+    background: url("../assets/ordi.jpg");
     background-position: center;
     background-size: cover;
     
@@ -10,12 +11,10 @@
 .container{
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     flex-direction: column;
-    margin-right: 75px;
-    padding-right: 50px;
-    border-right: 1px solid rgb(116, 116, 116);
+    
 }
 
 .container h1{
@@ -52,4 +51,32 @@
 .btn-img{
     font-size: 20px;
     margin-right: 16px;
+}
+
+@media (max-width:850px){
+    .container h1{
+        font-size: 44px;
+    }
+    .container p{
+        font-size: 18px;
+    }
+    .container .btn{
+        padding: 8px 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:630px){
+
+    .container h1{
+        font-size: 35px;
+    }
+    .container p{
+        font-size: 15px;
+        text-align: center;
+    }
+    .container .btn{
+        padding: 6px 25px;
+        font-size: 10px;
+    }
 }

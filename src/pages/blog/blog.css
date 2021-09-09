@@ -1,0 +1,10 @@
+.blog{
+    background-color: mediumslateblue;
+    color: white;
+    width: 100%;
+    height: calc(100vh - 80px);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

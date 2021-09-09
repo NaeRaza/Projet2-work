@@ -1,25 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './sidebar.css'
+import {Link} from 'react-router-dom'
+import { menuSidebar } from '../../dataSidebar'
+import * as FaIcon from 'react-icons/fa'
+import * as GrIcon from 'react-icons/gr'
 
-function Sidebar() {
-
-    const [menuOpen, setMenuOpen] = useState(false)
+function Sidebar({menuOpen, setMenuOpen}) {
 
     return (
-        <div className={menuOpen ? "sidebar" : "sidebar open"}>
+        <div className={menuOpen ? "sidebar open": "sidebar"}>
             <div className="sidebar-container">
                 <ul className="sidebar-menu">
-                    <li>Produits</li>
-                    <li>Logiciels</li>
-                    <li>Assistance</li>
-                    <li>Blog</li>
-                    <li>Pour les partenaires</li>
-                    <li>Où acheter</li>
+                    {menuSidebar.map((liste) => 
+                        <li key={liste.id} onClick={()=>setMenuOpen(!menuOpen)}>
+                            <Link to={liste.path}>
+                                {liste.title}
+                            </Link>
+                            <img src={liste.Img} alt=""/>
+                        </li>
+                    )}  
                 </ul>
-                <div className="sidebar-footer">
-                    <span>Contact</span>
-                    <span>Mail</span>
-                </div>
+                <ul className="sidebar-footer">
+                    <li><FaIcon.FaTwitter className="icons"/></li>
+                    <li><FaIcon.FaFacebook className="icons"/></li>
+                    <li><FaIcon.FaYoutube className="icons"/></li>
+                    <li><GrIcon.GrMail className="icons"/></li>
+                </ul>
             </div>
         </div>
     )

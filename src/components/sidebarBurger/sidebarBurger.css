@@ -1,19 +1,10 @@
 .sidebarBurger{
-    position: absolute;
-    background-color: transparent;
-    top: 100px;
-    right: 11px;
+    position: fixed;
+    top: 15px;
+    left: 0;
     z-index: 11;
 
     transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-
-.sidebarBurger.open .line1:before{
-
-}
-
-.sidebarBurger.open .line1:after{
 
 }
 
@@ -24,26 +15,53 @@
     border: none;
     background: 0 0;
     transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-    
 }
+
+.sidebarBurger.open{
+    transform: translateX(80px);
+    transition-delay: 0.2s;
+}
+
+.sidebarBurger.open .menu-button{
+    transform: rotate(90deg);
+}
+
+.sidebarBurger.open .line1:before{
+    background-color: whitesmoke;
+    transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.sidebarBurger.open .line1:after{
+    background-color: whitesmoke;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
 .line1:after, .line1:before{
     content: '';
     position: absolute;
     width: 2px;
     height: 48px;
     background-color: #fff;
-    top: 0;
-    right: 50%;
+    top: 50%;
+    left: 50%;
+    
     display: block;
     will-change: transform;
-    transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 }
 
 .line1:before{
-    transform: translate(-5px, 0) scaleY(0.7) rotate(180deg);
+    transform: translate(-5px, -50%) scaleY(0.7) rotate(180deg);
 }
 
 .line1::after{
-    transform: translate(5px, 0) scaleY(0.7) rotate(0);
+    transform: translate(5px, -50%) scaleY(0.7) rotate(0);
+}
+
+
+@media (max-width:850px){
+    .sidebarBurger{
+        display: none;
+    }
 }

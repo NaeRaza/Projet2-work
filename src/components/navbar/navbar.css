@@ -1,5 +1,4 @@
 .navbar {
-    position: relative;
     background: #000;
     height: 80px;
     display: flex;
@@ -11,67 +10,22 @@
 .navbar-logo {
     flex: 1;
     color: #fff;
-    justify-self: start;
-    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    margin-left: 50px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
 }
 
-.nav-menu {
-    flex: 3;
-    display: flex;
-    align-items: center;
-    list-style: none;
-
-    /*display: grid;
-    grid-template-columns: repeat(6, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: end;
-    margin-right: 2rem;*/
-}
-.nav-item {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
-.nav-links {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-}
-
-.nav-links:hover {
-    background-color: #1888ff;
-    border-radius: 4px;
-    transition: all 0.2s ease-out;
-}
-
-.fa-bars{
-    color: #fff;
-    margin-left: 16px;
-    cursor: pointer;
-}
-
-.ai-close{
-    color: #fff;
-    margin-left: 16px;
-    cursor: pointer;
-
-}
-.nav-links-mobile {
-    display: none;
-}
 
 .right{
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     margin-right: 20px;
     
 }
@@ -81,6 +35,7 @@
     color: #5ae4aa;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    letter-spacing: 1px;
     padding: 8px 12px;
     background-color: #181818;
     border-radius: 14px;
@@ -107,11 +62,13 @@
     padding: 8px 22px;
     background-color: #181818;
     border-radius: 14px;
+
 }
 
 .lang-link.active{
     border-bottom-left-radius: none;
     border-bottom-right-radius: none;
+    z-index: 555;
 }
 
 .caret-down{
@@ -122,7 +79,7 @@
 .lang-list{
     display: none;
     position: absolute;
-    top: 34px;
+    top: 32px;
     list-style: none;
     width: 100%;
     
@@ -153,5 +110,31 @@
 
 .lang-link.active .lang-list{
     display: block;
-    transition: all 1.7s ease-out;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media (max-width: 850px) {
+
+    .navbar-logo{
+        flex: none;
+        margin: 0;
+        padding-left: 12px ;
+    }
+
+    .nav-config{
+        flex: none;
+        align-items: center;
+        font-size: 12px;
+        padding: 8px 14px;
+        margin-right: 5px;
+    }
+
+    .lang-menu{
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .lang-list li{
+        font-size: 12px;
+    }
 }

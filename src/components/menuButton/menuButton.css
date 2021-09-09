@@ -1,0 +1,46 @@
+.menuButton{
+    display: none;
+}
+
+
+@media (max-width:850px){
+
+    .menuButton{
+        background-color: rgb(32, 19, 21);
+        display: block;
+        position: fixed;
+        top: 80%;
+        width: 82px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 10vw;
+        bottom: 10vh;
+        border: none;
+        padding: 20px;
+        border-radius: 24px;
+        z-index: 11;
+        transition: all 0.2s ease, transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition-delay: 0.4s;
+    }
+    .menu-icon{
+        color: white;
+        transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transform: rotate(0) scale(1);
+        cursor: pointer;
+    }
+
+    .menuButton.open{
+        background-color: rgb(32, 19, 21);
+        width: 64px;
+        transition-delay: 0.4s;
+        transform: translateX(-10px);
+    }
+    .menuButton.open .menu-icon{
+        color: white;
+        transform: rotate(225deg) scale(1.5);
+    }
+
+    
+}
