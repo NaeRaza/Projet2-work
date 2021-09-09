@@ -1,0 +1,49 @@
+.sidebarBurger{
+    position: absolute;
+    background-color: transparent;
+    top: 100px;
+    right: 11px;
+    z-index: 11;
+
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+.sidebarBurger.open .line1:before{
+
+}
+
+.sidebarBurger.open .line1:after{
+
+}
+
+.menu-button{
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: 0 0;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    
+}
+.line1:after, .line1:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 48px;
+    background-color: #fff;
+    top: 0;
+    right: 50%;
+    display: block;
+    will-change: transform;
+    transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+}
+
+.line1:before{
+    transform: translate(-5px, 0) scaleY(0.7) rotate(180deg);
+}
+
+.line1::after{
+    transform: translate(5px, 0) scaleY(0.7) rotate(0);
+}

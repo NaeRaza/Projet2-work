@@ -1,0 +1,55 @@
+.home{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: url("/src/assets/ordi.jpg");
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 75px;
+    padding-right: 50px;
+    border-right: 1px solid rgb(116, 116, 116);
+}
+
+.container h1{
+    font-size: 60px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin-bottom: 30px;
+}
+.container p{
+    font-size: 24px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 50px;
+}
+
+.container .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    background-color: #22d087;
+    color: #181818;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.container .btn:hover{
+    background-color: #05b46b;
+    transition: all 0.3s ease-out;    
+}
+
+.btn-img{
+    font-size: 20px;
+    margin-right: 16px;
+}
